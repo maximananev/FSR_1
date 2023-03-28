@@ -1,0 +1,5 @@
+all:
+	gcc lodepng.c prac.c -o analyzer
+
+worktry:
+	It's ok.
