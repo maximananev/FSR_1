@@ -1,0 +1,17 @@
+CC = g++
+CFLAGS = -std=c++11 -Wall
+
+main: main.o parser.o solver.o
+ $(CC) $(CFLAGS) -o main main.o parser.o solver.o
+
+main.o: main.cpp parser.h solver.h
+ $(CC) $(CFLAGS) -c main.cpp
+
+parser.o: parser.cpp parser.h item.h
+ $(CC) $(CFLAGS) -c parser.cpp
+
+solver.o: solver.cpp solver.h item.h
+ $(CC) $(CFLAGS) -c solver.cpp
+
+clean:
+ rm -f *.o main
